@@ -9,7 +9,7 @@ git clone https://github.com/mb4512/spilady2lammps.git
 
 ### Prerequisites
 
-This project was only written and tested with Python 3.9.1.
+This script was only written and tested with Python 3.9.1.
 
 Required libraries:
 ```
