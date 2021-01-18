@@ -1,4 +1,4 @@
-# spliday2lammps
+# spilady2lammps
 
 Script for converting a SPILADY ascii file to a LAMMPS data file. The script also produces an example LAMMPS input file compatible with eam/fs potentials.
 
