@@ -91,7 +91,7 @@ def main():
         efile.write('atom_modify map array sort 0 0.0\n')
         efile.write('boundary p p p\n\n')
 
-        efile.write('read_data %s.data\n' % prefix)
+        efile.write('read_data output/%s.data\n' % prefix)
 
         efile.write('pair_style eam/fs\n')
         efile.write('pair_coeff * * %s %s\n' % (ppath, potential_string))
