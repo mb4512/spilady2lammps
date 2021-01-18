@@ -1,0 +1,25 @@
+# LAMMPS input file for data file converted from SPILDAY ascii file
+
+units metal
+atom_style atomic
+units metal
+atom_modify map array sort 0 0.0
+boundary p p p
+
+read_data 316SS.data
+pair_style eam/fs
+pair_coeff * * potentials/Fe-Ni-Cr_fcc.eam.fs Fe Ni Cr
+neighbor 1.5 bin
+
+compute cpe all pe/atom
+compute cpetotal all reduce sum c_cpe
+
+thermo 100
+thermo_style custom step c_cpetotal press
+thermo_modify flush yes format float %23.16e
+
+minimize 1e-10 0 10000 10000
+
+write_dump all custom 316SS.dump id type x y z c_cpe
+write_data relaxed_316SS.data
+
